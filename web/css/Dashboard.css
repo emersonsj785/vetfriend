@@ -1,0 +1,48 @@
+.root{
+    --light: #ffffff;
+    --grey:#efefef;
+}
+  
+.d-block{
+     text-decoration: none;
+}
+body{
+    overflow: hidden;
+    font-weight: 300;
+    
+}
+li{
+    list-style: none;
+}
+.color-fondo{
+    background-image: linear-gradient(to right top, #069d50, #069d50, #069d50, #069d50, #069d50);
+}
+.color-text,.color-text1{
+    color: #000000;
+    font-weight: bold;
+}
+.color-text:hover{
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+
+#sidebar-container{
+    min-height: 100vh;
+}
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+#sidebar-container .menu{
+    width: 18rem;
+}
+.btn-buscar{
+    position: absolute;
+    right: 5px;
+}
+.contenido{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}

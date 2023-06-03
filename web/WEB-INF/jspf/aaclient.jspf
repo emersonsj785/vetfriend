@@ -1,0 +1,19 @@
+<%@include file="browser.jspf" %>
+<%
+            String autorizacion = (String) session.getAttribute("autorizacion");
+            String ID = (String) session.getAttribute("ID");
+
+            /*Hace cuatro comparaciones:
+            1.- si el ID es nulo
+            2.- si autorización (rol o cargo) es nulo
+            3.- Si la autorización ocrresponde o no con la página a la que quiere acceder
+            4.- si el ID de la sesion actual es igual al que inicio sesión
+            */
+            if ((ID == null) || (autorizacion == null)
+                    || (!autorizacion.equals("CLIENT"))
+                    || (!ID.equals(session.getId()))) {
+
+                response.sendRedirect("../login.jsp");
+            }
+%>
+

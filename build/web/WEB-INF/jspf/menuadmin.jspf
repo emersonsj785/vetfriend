@@ -1,0 +1,9 @@
+<%@ page pageEncoding="UTF-8" %>
+<div class="container">
+    <h1>Bienvenido a la intranet</h1>
+    <div class="list-group">
+        <a class="list-group-item" href="servicios.jsp">
+            Mantenimiento de servicios
+        </a>
+    </div>
+</div>

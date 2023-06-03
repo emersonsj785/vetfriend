@@ -1,0 +1,11 @@
+<% /* Este jspf evita que se almacene datos temporales*/
+    //    http versión 2
+    response.setHeader("Cache-Control",
+            "no-cache, no-store, max-age=0, must-revalidate");
+    //    http versión1.1
+    response.setHeader("Cache-Control", "no-store");
+    //    http versión1.0
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+%>
+

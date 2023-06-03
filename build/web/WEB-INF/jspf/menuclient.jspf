@@ -1,0 +1,7 @@
+<%@ page pageEncoding="UTF-8" %>
+<div class="container">
+    <h1>Bienvenido Cliente</h1>
+    <div class="list-group">
+    </div>
+</div>
+
