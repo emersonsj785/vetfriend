@@ -12,26 +12,28 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/login.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>       
     </head>
-    <body  style="background: url(img/bannerI.jpg)">
-        <h1 style = "color: #ffffff"></h1>
+    <body  style="background: url(img/fondoLogin.jpg); background-size: cover;
+    background-position: center; background-repeat: no-repeat; height: 100vh">
+        <h1></h1>
         <br>
         <br>
         <div class="container">
             <div class="col-lg-6"></div>>
-            <center><h1>INICIO DE SESIÓN</h1></center>
+            <center><h1 class="loginClase">INICIO DE SESIÓN</h1></center>
             <form method="post" action="Usuarios"
                   style="margin: 0 auto; width: 300px; 
                   padding: 10px;">
                 <div class="form-group">
-                    <label for="txtCorreo">Usuario</label><br/>
+                    <label for="txtCorreo" class="flotante">Usuario</label><br/>
                     <input type="email" name="txtCorreo" value="${user.correo}"
                            id="txtCorreo" required>            
                 </div>
                 <div class="form-group">
-                    <label for="txtClave">Clave</label><br/>
+                    <label for="txtClave" class="flotante">Clave</label><br/>
                     <input type="password" name="txtClave" 
                            id="txtClave" required>
                 </div><br/>

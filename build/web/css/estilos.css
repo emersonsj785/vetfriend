@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     text-decoration: none;
     width: 180px;
-    background: darkred;
+    background: #c1e2b3;
     color: white;
     padding: 15px;
     margin:16px auto;
@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .negrita {
-    color: darkred;
+    color: #c1e2b3;
 }
 .today-special .column {
     margin-bottom: 30px;
@@ -542,3 +542,28 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
 }
+
+.text-dark{
+    color:#000
+}
+
+.text-success{
+    color:#28a745
+}
+
+.gatos{
+    transition: transform 0.3s ease;
+}
+
+.gatos:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6); 
+}
+
+.login{
+    background: url(img/fondoLogin.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
