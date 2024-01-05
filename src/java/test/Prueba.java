@@ -2,27 +2,30 @@
 package test;
 
 import dao.DaoUsuarios;
+import dao.impl.DaoServiciosImpl;
 import dao.impl.DaoUsuariosImpl;
+import dto.Servicios;
 import dto.Usuarios;
+import java.sql.SQLException;
+import java.util.List;
 
 public class Prueba {
 
     public static void main(String[] args) {
-       DaoUsuarios du = new DaoUsuariosImpl();
-       
-       Usuarios user = new Usuarios();
-       
-       user.setCorreo("consola2@gmail.com");
-       user.setContraseña("consola");
-       user.setNombre("consola");
-       user.setApellido("Administra");
-       user.setDni("78945212");
-       user.setDireccion("Av Manrique");
-       try{
-           System.out.println("Exitoso");
-       }catch (Exception e) {
-           System.out.println("Error: "+du.getMensaje());
-         }
+
+       DaoUsuariosImpl daoUsuariosImpl = new DaoUsuariosImpl();
+        try {
+            Usuarios usuario = daoUsuariosImpl.usuarioLogin("admin@gmail.com", "admin");
+            System.out.println("ID: " + usuario.getId());
+            System.out.println("Correo: " + usuario.getCorreo());
+            System.out.println("Tipo: " + usuario.getTipo());
+            System.out.println("Nombre: " + usuario.getNombre());
+            System.out.println("Apellido: " + usuario.getApellido());
+            System.out.println("DNI: " + usuario.getDni());
+            System.out.println("Dirección: " + usuario.getDireccion());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
  
 
 //        user.setDni(78945612);

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Usuarios</title>
+        <link rel="stylesheet" type="text/css" href="estilos.css" />
+    </h:head>
+    <h:body>
+        <h2 class="text-dark">Usuarios</h2>
+        <h:form>
+            <h:commandButton value="Eliminar" action="#{controllerManagedBean.eliminarUsuarios}" />
+            <h:dataTable value="#{controllerManagedBean.listaUsuarios}" var="usuario" styleClass="tabla-usuarios">
+                <h:column>
+                    <f:facet name="header">Eliminar</f:facet>
+                    <h:selectBooleanCheckbox value="#{controllerManagedBean.usuariosSeleccionados[usuario.id]}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{usuario.id}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Correo</f:facet>
+                    <h:outputText value="#{usuario.correo}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputText value="#{usuario.nombre}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    <h:outputText value="#{usuario.apellido}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">DNI</f:facet>
+                    <h:outputText value="#{usuario.dni}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Dirección</f:facet>
+                    <h:outputText value="#{usuario.direccion}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Actualizar</f:facet>
+                    <h:commandButton value="Actualizar" action="#{controllerManagedBean.traerUsuario(usuario)}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>Login</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <h2>Iniciar sesión</h2>
+            <div>
+                <h:outputLabel for="correo">Correo:</h:outputLabel>
+                <h:inputText id="correo" value="#{controllerManagedBean.usuario.correo}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="contrasena">Contraseña:</h:outputLabel>
+                <h:inputSecret id="contrasena" value="#{controllerManagedBean.usuario.contraseña}" required="true" />
+            </div>
+            <div>
+                <h:commandButton value="Ingresar" action="#{controllerManagedBean.loginUsuario}" />
+
+
+            </div>
+
+            <div>
+                <h:button value="Registrarse" outcome="usuarioInsert.xhtml" />
+            </div>
+
+            <h:message for="correo" style="color: red;" />
+            <h:message for="contrasena" style="color: red;" />
+            <h:message id="mensajeGlobal" for="*" style="color: red;" />
+        </h:form>
+
+
+
+    </h:body>
+
+</html>
+
+
+
+
+

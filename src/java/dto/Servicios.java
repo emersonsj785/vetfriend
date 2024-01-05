@@ -1,6 +1,8 @@
 package dto;
 
-public class Servicios {
+import java.io.Serializable;
+
+public class Servicios implements Serializable{
 
     private Integer idServicio;
     private Integer idcategoria;

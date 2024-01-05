@@ -1,10 +1,11 @@
 package dao;
 
 import dto.Usuarios;
+import java.sql.SQLException;
 import java.util.List;
 public interface DaoUsuarios {
 
-    Usuarios usuarioLogin(String correo, String clave);
+    Usuarios usuarioLogin(String correo, String clave)throws SQLException;
     
     // SELECT (READ)
     List<Usuarios> usuariosSel();

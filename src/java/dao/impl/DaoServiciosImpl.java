@@ -3,6 +3,7 @@ package dao.impl;
 import dao.DaoServicios;
 import dto.Carrito;
 import dto.Servicios;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import util.ConectaBD;
 
-public class DaoServiciosImpl implements DaoServicios {
+public class DaoServiciosImpl implements DaoServicios, Serializable {
 
     private ConectaBD conectaDb;
     private String mensaje;

@@ -7,7 +7,9 @@ CREATE TABLE `vetfriend`.`usuarios` (
  */
 package dto;
 
-public class Usuarios {
+import java.io.Serializable;
+
+public class Usuarios implements Serializable{
     private Integer id;
     private String correo;
     private String contraseña;

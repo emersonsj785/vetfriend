@@ -566,4 +566,30 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
 }
 
+/*Estilo Tabla*/
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.tabla-usuarios th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.tabla-usuarios tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla-usuarios tr:hover {
+  background-color: #eaeaea;
+}
+
+
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>Actualizar Servicio</title>
+    </h:head>
+
+    <h:body>
+        <h2>Actualizar Servicio</h2>
+
+        <h:form>
+            <h:outputLabel for="idcategoria">Categoría:</h:outputLabel>
+            <h:inputText id="idcategoria" value="#{controllerManagedBean.servicioSeleccionado.idcategoria}" />
+
+            <h:outputLabel for="nombre">Nombre:</h:outputLabel>
+            <h:inputText id="nombre" value="#{controllerManagedBean.servicioSeleccionado.nombre}" />
+
+            <h:outputLabel for="imagen">Imagen:</h:outputLabel>
+            <h:inputText id="imagen" value="#{controllerManagedBean.servicioSeleccionado.imagen}" />
+
+            <h:outputLabel for="precio">Precio:</h:outputLabel>
+            <h:inputText id="precio" value="#{controllerManagedBean.servicioSeleccionado.precio}" />
+
+            <h:outputLabel for="descripcion">Descripción:</h:outputLabel>
+            <h:inputText id="descripcion" value="#{controllerManagedBean.servicioSeleccionado.descripcion}" />
+
+            <h:commandButton value="Guardar" action="#{controllerManagedBean.actualizarServicio}" />
+        </h:form>
+    </h:body>
+</html>
+
+

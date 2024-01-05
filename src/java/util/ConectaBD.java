@@ -1,10 +1,11 @@
 package util;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConectaBD {
+public class ConectaBD implements Serializable {
     private final String URL = "jdbc:mysql://localhost:3306/vetfriend";
     private final String DRIVER = "com.mysql.jdbc.Driver";
     private final String USER = "root";

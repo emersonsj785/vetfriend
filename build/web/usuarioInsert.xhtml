@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Registro de Usuario</title>
+    </h:head>
+    <h:body>
+        <h2>Registro de Usuario</h2>
+        <h:form>
+            <div>
+                <h:outputLabel for="correo">Correo:</h:outputLabel>
+                <h:inputText id="correo" value="#{controllerManagedBean.usuario.correo}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="contrasena">Contraseña:</h:outputLabel>
+                <h:inputSecret id="contrasena" value="#{controllerManagedBean.usuario.contraseña}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="nombre">Nombre:</h:outputLabel>
+                <h:inputText id="nombre" value="#{controllerManagedBean.usuario.nombre}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="apellido">Apellido:</h:outputLabel>
+                <h:inputText id="apellido" value="#{controllerManagedBean.usuario.apellido}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="dni">DNI:</h:outputLabel>
+                <h:inputText id="dni" value="#{controllerManagedBean.usuario.dni}" required="true" />
+            </div>
+            <div>
+                <h:outputLabel for="direccion">Dirección:</h:outputLabel>
+                <h:inputText id="direccion" value="#{controllerManagedBean.usuario.direccion}" required="true" />
+            </div>
+            <div>
+                <h:commandButton value="Registrar" action="#{controllerManagedBean.registrarUsuario}" />
+            </div>
+            <h:message for="correo" style="color: red;" />
+            <h:message for="contrasena" style="color: red;" />
+            <h:message for="nombre" style="color: red;" />
+            <h:message for="apellido" style="color: red;" />
+            <h:message for="dni" style="color: red;" />
+            <h:message for="direccion" style="color: red;" />
+            <h:message id="mensajeGlobal" for="*" style="color: red;" />
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+

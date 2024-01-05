@@ -3,14 +3,16 @@ package dao.impl;
 import dao.DaoUsuarios;
 import dto.Servicios;
 import dto.Usuarios;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import util.ConectaBD;
 
-public class DaoUsuariosImpl implements DaoUsuarios {
+public class DaoUsuariosImpl implements DaoUsuarios, Serializable {
 
     private ConectaBD conectaDb;
     String mensaje;
@@ -20,7 +22,7 @@ public class DaoUsuariosImpl implements DaoUsuarios {
     }
 
     @Override
-    public Usuarios usuarioLogin(String correo, String clave) {
+    public Usuarios usuarioLogin(String correo, String clave) throws SQLException{
         Usuarios user = new Usuarios();
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT ")
@@ -97,7 +99,37 @@ public class DaoUsuariosImpl implements DaoUsuarios {
 
     @Override
     public Usuarios usuariosGet(Integer nro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Usuarios usuario = null;
+    StringBuilder sql = new StringBuilder();
+    sql.append("SELECT ")
+            .append("ID_Cliente,")
+            .append("correo,")
+            .append("Nombre,")
+            .append("Apellido,")
+            .append("DNI,")
+            .append("Direccion ")
+            .append("FROM usuarios ")
+            .append("WHERE ID_Cliente = ?");
+
+    try (Connection cn = conectaDb.getConnection()) {
+        PreparedStatement ps = cn.prepareStatement(sql.toString());
+        ps.setInt(1, nro);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            usuario = new Usuarios();
+            usuario.setId(rs.getInt("ID_Cliente"));
+            usuario.setCorreo(rs.getString("correo"));
+            usuario.setNombre(rs.getString("Nombre"));
+            usuario.setApellido(rs.getString("Apellido"));
+            usuario.setDni(rs.getString("DNI"));
+            usuario.setDireccion(rs.getString("Direccion"));
+        }
+    } catch (Exception e) {
+        mensaje = e.getMessage();
+    }
+
+    return usuario;
     }
 
     @Override
@@ -123,8 +155,11 @@ public class DaoUsuariosImpl implements DaoUsuarios {
             ps.setString(7, usuario.getDireccion());
             int ctos = ps.executeUpdate();
             if (ctos == 0) {
-                mensaje = "cero filas insertadas";
-            }
+            mensaje = "cero filas insertadas";
+            return "Error: no se pudo realizar el registro"; // Indicar que el registro falló
+        } else {
+            return "Registro exitoso"; // Indicar que el registro fue exitoso
+        }
         } catch (Exception e) {
             mensaje = e.getMessage();
         }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>AAAAAAAAAAAAAAAAAAAAAAAAA</title>
+    </h:head>
+    <h:body>
+        <h2 style="color: blue;">INDEXXXXXXXXX</h2>
+        <h:form>
+            <h:commandButton value="Hola" action="#{controllerManagedBean.hola}" />
+
+            <!-- Agregar botón para insertar servicio -->
+
+            <h:commandButton value="Insertar Servicio" action="insertServicio.xhtml" />
+
+            <h:commandButton value="Eliminar" action="#{controllerManagedBean.eliminarServicio}" />
+
+
+            <h:dataTable value="#{controllerManagedBean.listaServicios}" var="uea" border="2" cellspacing="1" cellpadding="1">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{uea.idServicio}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Categoría</f:facet>
+                    <h:outputText value="#{uea.idcategoria}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    <h:outputText value="#{uea.nombre}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Imagen</f:facet>
+                    <h:outputText value="#{uea.imagen}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Precio</f:facet>
+                    <h:outputText value="#{uea.precio}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Descripcion</f:facet>
+                    <h:outputText value="#{uea.descripcion}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Actualizar</f:facet>
+                    <h:commandButton value="Editar" action="#{controllerManagedBean.traerServicio(uea)}" />
+                </h:column>
+                <!-- ... -->
+                <!-- ... -->
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
